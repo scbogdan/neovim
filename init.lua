@@ -95,7 +95,6 @@ require("lazy").setup("plugins", {
         { "nvim-treesitter/playground" },
         { "windwp/nvim-autopairs" },
         { "numToStr/Comment.nvim" },
-        { "kylechui/nvim-surround" },
         { "windwp/nvim-ts-autotag" },
         { "lewis6991/gitsigns.nvim" },
         { "akinsho/toggleterm.nvim" },
