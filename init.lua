@@ -1,4 +1,4 @@
---[[ Bootstrap lazy.nvim --]]
+-- Bootstrap lazy.nvim
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,7 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---[[ General settings --]]
+-- General settings
 
 local opt = vim.opt
 vim.g.mapleader = " "
@@ -43,7 +43,7 @@ opt.colorcolumn = "80"
 opt.completeopt = "menuone,noselect"
 opt.clipboard = "unnamedplus"
 
---[[ Key mappings --]]
+-- Key mappings
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set('n', '<leader>vs', '<cmd>:vsplit<CR>zz')
@@ -61,7 +61,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set('n', '<leader>gp', '<cmd>:Gitsigns preview_hunk<CR>')
 vim.keymap.set('n', '<leader>gt', '<cmd>:Gitsigns toggle_current_line_blame<CR>')
 
---[[ Auto commands --]]
+-- Auto commands
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
---[[ Lazy.nvim setup --]]
+-- Lazy.nvim setup
 require("lazy").setup("plugins", {
     install = { colorscheme = { "habamax" } },
     checker = { enabled = true },
