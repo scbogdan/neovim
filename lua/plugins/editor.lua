@@ -1,0 +1,52 @@
+-- Editor enhancement plugins
+return {
+    { "numToStr/Comment.nvim" },
+    { "windwp/nvim-autopairs" },
+    { "mbbill/undotree" },
+    { "nanotee/zoxide.vim" },
+    { "folke/trouble.nvim",   dependencies = "nvim-tree/nvim-web-devicons", },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        config = function()
+            require("toggleterm").setup({
+                size = function(term)
+                    if term.direction == "horizontal" then
+                        return 30
+                    elseif term.direction == "vertical" then
+                        return 0.3
+                    end
+                end,
+                direction = "horizontal",
+                autochdir = true,
+                shade_terminals = true,
+            })
+
+            -- Key mappings for ToggleTerm
+            vim.keymap.set({ 'n', 't' }, '<c-t><c-t>', '<cmd>:ToggleTerm<CR>')
+            vim.keymap.set('n', '<c-t>v', '<cmd>:ToggleTerm direction="vertical" size=70<CR>')
+            vim.keymap.set('n', '<c-t>h', '<cmd>:ToggleTerm direction="horizontal"<CR>')
+        end,
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy", 
+        config = function()
+            local wk = require("which-key")
+            wk.setup({
+                win = {
+                    border = "rounded",
+                },
+            })
+            wk.add({
+                { "<leader>", group = "leader" },
+                { "<leader>p", group = "project" },
+                { "<leader>g", group = "git" },
+            })
+        end,
+    }
+}
