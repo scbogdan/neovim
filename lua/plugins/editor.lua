@@ -66,6 +66,7 @@ return {
             vim.keymap.set({ 'n', 't' }, '<c-t><c-t>', '<cmd>:ToggleTerm<CR>')
             vim.keymap.set('n', '<c-t>v', '<cmd>:ToggleTerm direction="vertical" size=70<CR>')
             vim.keymap.set('n', '<c-t>h', '<cmd>:ToggleTerm direction="horizontal"<CR>')
+            vim.keymap.set('n', '<c-t>f', '<cmd>:ToggleTerm direction="float" size=70<CR>')
         end,
     },
     {
