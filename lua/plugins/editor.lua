@@ -34,7 +34,7 @@ return {
     },
     {
         "folke/which-key.nvim",
-        event = "VeryLazy", 
+        event = "VeryLazy",
         config = function()
             local wk = require("which-key")
             wk.setup({
@@ -43,10 +43,42 @@ return {
                 },
             })
             wk.add({
-                { "<leader>", group = "leader" },
+                { "<leader>",  group = "leader" },
                 { "<leader>p", group = "project" },
                 { "<leader>g", group = "git" },
             })
         end,
-    }
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                keymaps = {
+                    insert = "<C-g>s",
+                    insert_line = "<C-g>S",
+                    normal = "ys",
+                    normal_cur = "yss",
+                    normal_line = "yS",
+                    normal_cur_line = "ySS",
+                    visual = "S",
+                    visual_line = "gS",
+                    delete = "ds",
+                    change = "cs",
+                    change_line = "cS",
+                },
+                surrounds = {
+                    ["f"] = {
+                        add = function()
+                            return {
+                                { "function() ", "" },
+                                { " end",        "" },
+                            }
+                        end,
+                    },
+                },
+            })
+        end,
+    },
 }
