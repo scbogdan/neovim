@@ -41,11 +41,10 @@ return {
             },
         },
     },
-
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
+        ft = { "markdown" }
     },
     {
         "akinsho/toggleterm.nvim",

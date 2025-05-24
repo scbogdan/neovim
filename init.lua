@@ -102,6 +102,9 @@ require("lazy").setup("plugins", {
             "iamcco/markdown-preview.nvim",
             cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
             ft = { "markdown" },
+            build = function()
+                vim.fn["mkdp#util#install"]()
+            end,
         },
         { "catppuccin/nvim",                     name = "catppuccin",                             priority = 1000 },
         { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                    opts = {} },
@@ -110,6 +113,7 @@ require("lazy").setup("plugins", {
         { "tpope/vim-fugitive" },
         { "rose-pine/neovim",                    name = "rose-pine", },
         { 'projekt0n/github-nvim-theme' },
+        { "rebelot/kanagawa.nvim",               name = "kanagawa" },
         { "mbbill/undotree" },
         { "folke/which-key.nvim" },
         { "github/copilot.vim" },

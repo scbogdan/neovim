@@ -62,4 +62,72 @@ return {
             })
         end,
     },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            flavour = "mocha",
+            background = {
+                light = "latte",
+                dark = "mocha",
+            },
+            transparent_background = true,
+            show_end_of_buffer = false,
+            term_colors = true,
+            dim_inactive = {
+                enabled = false,
+                shade = "dark",
+                percentage = 0.10,
+            },
+            no_italic = true,
+            no_bold = false,
+            no_underline = false,
+            styles = {
+                comments = {},
+                conditionals = {},
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+                operators = {},
+                -- miscs = {}, -- Uncomment to turn off hard-coded styles
+            },
+            color_overrides = {},
+            custom_highlights = {},
+            default_integrations = true,
+            integrations = {
+                cmp = true,
+                gitsigns = true,
+                nvimtree = true,
+                treesitter = true,
+                notify = false,
+                mini = {
+                    enabled = true,
+                    indentscope_color = "",
+                },
+                -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+            },
+        },
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+            vim.cmd.colorscheme("catppuccin")
+            -- Add this after your colorscheme setup
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                callback = function()
+                    vim.cmd([[
+            highlight Normal guibg=NONE ctermbg=NONE
+            highlight NormalFloat guibg=NONE ctermbg=NONE
+            highlight SignColumn guibg=NONE ctermbg=NONE
+            highlight EndOfBuffer guibg=NONE ctermbg=NONE
+        ]])
+                end,
+            })
+        end,
+    }
 }
