@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/scbogdan/neovim/compare/v1.1.0...v1.2.0) (2025-05-25)
+
+
+### Features
+
+* add lint-staged and luacheck ci ([f523967](https://github.com/scbogdan/neovim/commit/f523967e1ab224a97cec4b01bf7c5226b7ee7652))
+
 # [1.1.0](https://github.com/scbogdan/neovim/compare/v1.0.0...v1.1.0) (2025-05-25)
 
 ### Features
