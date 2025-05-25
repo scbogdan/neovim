@@ -75,5 +75,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Lazy.nvim setup
 require("lazy").setup("plugins", {
     install = { colorscheme = { "habamax" } },
-    checker = { enabled = true },
+    checker = {
+        enabled = true,
+        notify = false, -- Disable notifications for updates
+    },
 })
