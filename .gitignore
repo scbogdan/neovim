@@ -1,2 +1,6 @@
+# Iterm2 configuration files
+# in progress...
 iterm2*
-pack*
+
+# Dependency directories
+node_modules
