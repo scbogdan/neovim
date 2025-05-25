@@ -10,7 +10,7 @@ return {
         },
         config = function()
             require("CopilotChat").setup({
-                debug = true, -- Enable debugging
+                debug = false, -- Enable debugging
             })
         end,
     },
