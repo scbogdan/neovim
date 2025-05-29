@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/scbogdan/neovim/compare/v1.0.0...v1.0.1) (2025-05-29)
+
+
+### Bug Fixes
+
+* termtoggle mappings ([a1a963e](https://github.com/scbogdan/neovim/commit/a1a963eb53a8ce0d69e9a141dee350888886ed06))
+
 # 1.0.0 (2025-05-27)
 
 
